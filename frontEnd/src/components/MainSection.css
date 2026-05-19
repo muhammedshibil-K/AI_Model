@@ -1,0 +1,377 @@
+/* =========================
+   MAIN SECTION
+========================= */
+
+.main-section {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-app);
+  overflow: hidden;
+  color: var(--text-main);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
+
+.orb {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #4ade80, #15803d);
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.3);
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+  width: 100%;
+  padding: 0 30px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 24px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================
+   CHAT CONTAINER
+========================= */
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================
+   CHAT MESSAGES
+========================= */
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  scroll-behavior: smooth;
+}
+
+/* SCROLLBAR */
+
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.3);
+  border-radius: 20px;
+}
+
+/* =========================
+   MESSAGE COMMON
+========================= */
+
+.message {
+  max-width: 75%;
+  padding: 14px 18px;
+  border-radius: 18px;
+  line-height: 1.6;
+  font-size: 14px;
+  word-wrap: break-word;
+  animation: fadeIn 0.2s ease;
+}
+
+/* USER MESSAGE */
+
+.user-message {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+/* BOT MESSAGE */
+
+.bot-message {
+  align-self: flex-start;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  border-bottom-left-radius: 4px;
+}
+
+/* =========================
+   INPUT SECTION
+========================= */
+
+.chat-box {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(
+    to top,
+    var(--bg-app),
+    rgba(255, 255, 255, 0.85)
+  );
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border-color);
+}
+
+/* DARK MODE SUPPORT */
+
+.dark .chat-box {
+  background: linear-gradient(
+    to top,
+    var(--bg-app),
+    rgba(17, 24, 39, 0.85)
+  );
+}
+
+/* =========================
+   INPUT WRAPPER
+========================= */
+
+.chat-input-wrapper {
+  width: 100%;
+  
+  max-width: 900px;
+  margin: auto;
+  background: var(--bg-card);
+  border: 1px solid #10b981;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================
+   AUTO HEIGHT TEXTAREA
+========================= */
+
+.chat-textarea {
+  width: 100%;
+  min-height: 24px;
+  max-height: 220px;
+  overflow-y: auto;
+  resize: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-main);
+  font-size: 15px;
+  line-height: 1.7;
+  font-family: inherit;
+}
+
+/* PLACEHOLDER */
+
+.chat-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.chat-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+/* BUTTON COMMON */
+
+.chat-actions button {
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ATTACH BUTTON */
+
+.attach-btn {
+  background: var(--bg-app);
+  color: var(--text-main);
+  border: 1px solid var(--border-color) !important;
+}
+
+.attach-btn:hover {
+  background: var(--border-color);
+}
+
+/* SEND BUTTON */
+
+.send-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding:  12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  /* transform: translateY(-2px); */
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.25);
+}
+
+.send-btn:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* START SCREEN */
+
+.start-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+/* CENTER INPUT */
+
+.center-input-wrapper {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+
+  .chat-box {
+    padding: 14px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .chat-input-wrapper {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .chat-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .chat-actions button {
+    width: 100%;
+  }
+
+  .chat-textarea {
+    font-size: 14px;
+  }
+}

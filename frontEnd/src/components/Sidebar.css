@@ -1,0 +1,120 @@
+.sidebar {
+  width: 260px;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border-color);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.logo-icon {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #34d399, #059669);
+  transform: rotate(45deg);
+  border-radius: 5px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav .active {
+  background: #f3f4f6;
+  color: var(--text-main);
+}
+
+.recent-section {
+  margin-top: 30px;
+}
+
+.recent-section h4 {
+  margin-bottom: 10px;
+}
+
+.recent-item {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.recent-item span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.sidebar-footer {
+  margin-top: 30px;
+}
+
+.theme-toggle {
+  display: flex;
+  background: var(--bg-app);
+  padding: 4px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.theme-toggle button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.theme-toggle .active {
+  background: var(--bg-card);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.items{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+}
